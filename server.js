@@ -51,11 +51,18 @@ mongoose.connect(process.env.MONGO_URI)
         }
     })
 
-    app.put ()
+    app.put ('/item' , async (req,res) => {
+        try{
+            const Restaurant = await Restaurant.findByIdAndUpdate(req.params.id)
+        }
+        catch (error){
+            
+        }
+    })
 
     app.delete('/itemde', async (req,res) =>{
         try{
-            const Restaurant = await workout.findByIdAndDelete(req.params.id);
+            const Restaurant = await Restaurant.findByIdAndDelete(req.params.id);
         }
         catch (error){
 
